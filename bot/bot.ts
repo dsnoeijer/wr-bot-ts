@@ -1,9 +1,9 @@
 import { Client } from "discord.js";
 import { IntentOptions } from "./config/IntentOptions";
-import { validateEnv } from "./utils/validateEnv";
+import { validateEnv } from "../shared/utils/validateEnv";
 import { onReady } from "./events/onReady";
 import { onInteraction } from "./events/onInteraction";
-import { connectDatabase } from "./database/connectDatabase";
+import { connectDatabase } from "../database/connectDatabase";
 
 
 (async () => {

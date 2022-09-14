@@ -1,19 +1,58 @@
-import "./widget.scss";
+
+import Widget from "../../Components/Widget/Widget";
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import ScoreboardIcon from '@mui/icons-material/Scoreboard';
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
+import "./home.scss";
 
 
-interface WidgetProps {
-    type: string
+const HomeWidgets = [
+    {
+        title: "Total Wins",
+        data: "wins",
+        link: "See  more...",
+        icon: < EmojiEventsIcon />
+    },
+    {
+        title: "Total Points",
+        data: "points",
+        link: "See  more...",
+        icon: <ScoreboardIcon />
+    },
+    {
+        title: "Fastest Time",
+        data: "time",
+        link: "See  more...",
+        icon: <AccessTimeFilledIcon />
+    }
+    ,
+    {
+        title: "Longest Streak",
+        data: "streak",
+        link: "See  more...",
+        icon: <DoneAllIcon />
+    }
+]
+
+const Home = () => {
+    return (
+        <div className="dash">
+            <div className="widgets">
+                <Widgets page="home" />
+                {/* <Widget type="wins" />
+                <Widget type="points" />
+                <Widget type="time" />
+                <Widget type="streak" /> */}
+
+            </div>
+        </div>
+    )
 }
 
-const Widget = ({ type }: WidgetProps) => {
+export default Home;
 
-    let data;
-
-    switch (type) {
+/*
         case "wins":
             data = {
                 title: "Total Wins",
@@ -50,22 +89,4 @@ const Widget = ({ type }: WidgetProps) => {
                 )
             }
             break;
-        default:
-            break;
-    }
-
-    return (
-        <div className="widget">
-            <div className="left">
-                <span className="title">{data?.title}</span>
-                <span className="counter"></span>
-                <span className="link">{data?.link}</span>
-            </div>
-            <div className="right">
-                {data?.icon}
-            </div>
-        </div>
-    )
-}
-
-export default Widget;
+*/
